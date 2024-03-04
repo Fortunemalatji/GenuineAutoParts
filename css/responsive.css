@@ -4,6 +4,11 @@ body {
     margin: 0; /* Reset default margin */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
+@media (max-width: 600px) {
+    .gallery {
+      padding: 10px;
+    }
+  }
 
 /* Media Query for small devices */
 @media only screen and (max-width: 768px) {
@@ -12,7 +17,9 @@ body {
     .reserv {
         display: none; /* Hide title and reserv elements */
     }
-
+    .gallery {
+        padding: 10px;
+      }
     .header-top {
         width: 100%; /* Set the header width to 100% */
         display: flex;
@@ -109,6 +116,8 @@ body {
     .whours ul li {
         font-size: 14px;
     }/* Remaining adjustments for small screens remain the same */
+
+    
 }
 
 /* Media Query for medium devices */
@@ -118,6 +127,15 @@ body {
     .reserv {
         display: none; /* Hide title and reserv elements */
     }
+
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contact-details,
+      .contact-form{
+        width: 90%;
+      }
 
     .header-top,
     .header-bottom {

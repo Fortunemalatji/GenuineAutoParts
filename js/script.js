@@ -61,3 +61,21 @@ function togglebar() {
         e.target.elements.message.value = '';
       });
     
+
+      function checkVisibility() {
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const windowHeight = window.innerHeight;
+  
+        galleryItems.forEach(item => {
+          const position = item.getBoundingClientRect().top;
+          if (position < windowHeight * 0.9) {
+            item.classList.add('show');
+          } else {
+            item.classList.remove('show');
+          }
+        });
+      }
+  
+      window.addEventListener('scroll', checkVisibility);
+      window.addEventListener('resize', checkVisibility);
+      window.addEventListener('load', checkVisibility);
