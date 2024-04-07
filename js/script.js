@@ -79,3 +79,41 @@ function togglebar() {
       window.addEventListener('scroll', checkVisibility);
       window.addEventListener('resize', checkVisibility);
       window.addEventListener('load', checkVisibility);
+
+      //Testimonies
+      document.addEventListener("DOMContentLoaded", function () {
+        const testimonials = document.querySelectorAll(".testimonial");
+        let currentTestimonialIndex = 0;
+    
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                if (i === index) {
+                    testimonial.classList.add("active");
+                } else {
+                    testimonial.classList.remove("active");
+                }
+            });
+        }
+    
+        function nextTestimonial() {
+            currentTestimonialIndex++;
+            if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            }
+            showTestimonial(currentTestimonialIndex);
+        }
+    
+        function prevTestimonial() {
+            currentTestimonialIndex--;
+            if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            }
+            showTestimonial(currentTestimonialIndex);
+        }
+    
+        document.querySelector(".next-arrow").addEventListener("click", nextTestimonial);
+        document.querySelector(".prev-arrow").addEventListener("click", prevTestimonial);
+    
+        setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds (adjust as needed)
+    });
+        
