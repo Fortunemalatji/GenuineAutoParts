@@ -1,0 +1,26 @@
+{
+  "name": "genuineautoparts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fortunemalatji/GenuineAutoParts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fortunemalatji/GenuineAutoParts/issues"
+  },
+  "homepage": "https://github.com/Fortunemalatji/GenuineAutoParts#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19"
+  }
+}

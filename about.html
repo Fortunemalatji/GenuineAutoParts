@@ -5,278 +5,297 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Genuine Auto Parts</title>
-
+    <link href="assets/css/output.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-
-        .container {
-            padding-top: 50px;
-            padding-bottom: 20px;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            margin-top: 20px;
-        }
-
-        .picture {
-            width: 400px;
-            height: auto; /* Set a static width */
-        }
-
-        .picture img {
-            width: 100%;
-            height: 400px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .info {
-            margin-left: 20px;
-            width: 600px; /* Set a static width */
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .button-container {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            white-space: nowrap;
-            margin-bottom: 20px;
-            justify-content: center;
-        }
-
-        .button-container button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button-container button.active {
-            background-color: #0056b3;
-        }
-
-        .content-text {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            display: none;
-            margin-bottom: 20px;
-        }
-
-        .content-text.active {
-            display: block;
-        }
-
-
-
-        h2 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .button-container button:hover {
-            background-color: rgb(49, 88, 187);
-        }
-    </style>
+    <!-- Using Boxicons from CDN -->
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
 </head>
 
-<body>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 flex flex-col min-h-screen">
 
-    <header>
-        <div class="header-top">
-            <div class="image">
-                <img src="img/auto.png" alt="">
+    <!-- Header -->
+    <header class="fixed w-full z-50 top-0 transition-all duration-300 shadow-md">
+        <!-- Top Bar -->
+        <div
+            class="bg-premium-black text-gray-400 py-1.5 px-4 md:px-8 flex justify-between items-center text-xs tracking-wider">
+            <div class="hidden md:flex space-x-6">
+                <a href="tel:0792003052" class="hover:text-gold-accent transition flex items-center gap-2">
+                    <box-icon name='phone' type='solid' color="#fbbf24" size="xs"></box-icon> 0792003052
+                </a>
+                <a href="mailto:Thapelomolobela@gmail.com"
+                    class="hover:text-gold-accent transition flex items-center gap-2">
+                    <box-icon name='envelope' type='solid' color="#fbbf24" size="xs"></box-icon>
+                    Thapelomolobela@gmail.com
+                </a>
             </div>
-            <div class="title">
-                <div>
-                    <strong>
-                        <p style="font-size: 18px;">Phone</p>
-                    </strong>
-                    <a href="">Call - 0792003052</a>
+            <div class="flex items-center space-x-4 ml-auto">
+                <span class="hidden md:inline">Mon-Fri: 08:00 - 17:00</span>
+                <div class="flex space-x-2">
+                    <a href="#" class="hover:text-gold-accent transition"><box-icon name='facebook' type='logo'
+                            color="currentColor" size="xs"></box-icon></a>
+                    <a href="#" class="hover:text-gold-accent transition"><box-icon name='instagram' type='logo'
+                            color="currentColor" size="xs"></box-icon></a>
                 </div>
             </div>
-            <div class="reserv">
-                <div>
-                    <strong>
-                        <p style="font-size: 18px;">Email Address</p>
-                    </strong>
-                    <a href="" style="color: #fff;">Thapelomolobela@gmail.com</a>
-                </div>
-            </div>
-            <div class="reserv">
-                <div>
-                    <strong>
-                        <p style="font-size: 18px;">Operating Hours</p>
-                    </strong>
-                    <p>Mon-Fri : 08H00 - 17H00</p>
-                    <p>Weekends : Closed</p>
-                </div>
-            </div>
-            <div class="menu-icon">
-                <button onclick="myFunction()">
-                    <box-icon name='menu'></box-icon>
-                </button>
-            </div>
-    
         </div>
-    
-        <div class="header-bottom">
-    
-            <div class="navbar">
-                <nav>
-                    <strong>
-                        <a href="index.html" >Home</a>
-                        <a href="">Services</a>
-                        <div class="dropdown">
-                            <a href="#" class="dropbtn">Pages &triangledown;</a>
-                            <div class="dropdown-content">
-                                <a href="#">Page 1</a>
-                                <a href="#">Page 2</a>
-                                <a href="#">Page 3</a>
-                            </div>
+
+        <!-- Navigation Bar -->
+        <div class="bg-deep-blue text-white backdrop-blur-sm bg-opacity-95 border-b border-gray-800">
+            <div class="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group">
+                    <div class="bg-white p-1 rounded-full mr-3 group-hover:scale-105 transition duration-300">
+                        <img src="assets/img/auto.png" alt="Logo" class="h-10 w-10 object-contain">
+                    </div>
+                    <span
+                        class="text-xl font-bold uppercase tracking-widest group-hover:text-gold-accent transition">Genuine<span
+                            class="text-gold-accent">Auto</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wide">
+                    <a href="index.html"
+                        class="hover:text-gold-accent transition hover:border-b-2 border-transparent pb-1">Home</a>
+                    <a href="#"
+                        class="hover:text-gold-accent transition hover:border-b-2 border-transparent pb-1">Services</a>
+
+                    <div class="relative group">
+                        <button class="flex items-center hover:text-gold-accent transition focus:outline-none pb-1">
+                            Pages <box-icon name='chevron-down' color="currentColor" size="xs" class="ml-1"></box-icon>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform origin-top translate-y-2 group-hover:translate-y-0">
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-gray-50 hover:text-gold-accent border-b border-gray-100 transition">Page
+                                1</a>
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-gray-50 hover:text-gold-accent border-b border-gray-100 transition">Page
+                                2</a>
+                            <a href="#" class="block px-4 py-3 hover:bg-gray-50 hover:text-gold-accent transition">Page
+                                3</a>
                         </div>
-                        <a href="#" class="active">About Us</a>
-                        <a href="contactUs.html" >Contact Us</a>
-                    </strong>
+                    </div>
+
+                    <a href="about.html" class="text-gold-accent border-b-2 border-gold-accent pb-1">About Us</a>
+                    <a href="contactUs.html"
+                        class="px-5 py-2 bg-gold-accent text-black font-bold rounded hover:bg-white hover:text-black transition duration-300 -mt-2">Contact
+                        Us</a>
                 </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold-accent focus:outline-none">
+                        <box-icon name='menu' color="currentColor" size="md"></box-icon>
+                    </button>
+                </div>
             </div>
-    
-            <div class="socials">
-                <a href=""><box-icon name='facebook' type='logo'></box-icon></a>
-    
-                <!-- Twitter -->
-                <a href=""><box-icon type='logo' name='twitter'></box-icon></a>
-    
-                <!-- Instagram -->
-                <a href=""><box-icon name='instagram' type='logo'></box-icon></a>
-    
-                <!-- Linkedin -->
-                <a href=""><box-icon name='linkedin' type='logo'></box-icon></a>
-    
-                <!-- Github -->
-                <a href=""><box-icon name='github' type='logo'></box-icon></a>
-    
-                <!-- Whatsapp -->
-                <a href=""><box-icon name='whatsapp' type='logo'></box-icon></a>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-deep-blue border-t border-gray-700 absolute w-full left-0">
+                <div class="px-4 py-2 space-y-1">
+                    <a href="index.html"
+                        class="block py-3 text-gold-accent font-semibold border-b border-gray-700">Home</a>
+                    <a href="#"
+                        class="block py-3 text-gray-300 hover:text-gold-accent border-b border-gray-700 transition">Services</a>
+                    <a href="about.html"
+                        class="block py-3 text-gray-300 hover:text-gold-accent border-b border-gray-700 transition">About
+                        Us</a>
+                    <a href="contactUs.html" class="block py-3 text-gray-300 hover:text-gold-accent transition">Contact
+                        Us</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        <div class="content">
-            <div class="picture">
-                <img src="img/about.jpg" alt="Car Parts">
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <h1
+            class="text-4xl font-bold text-center text-gray-800 mb-12 uppercase tracking-wide border-b-4 border-blue-600 inline-block pb-2">
+            About Us</h1>
+
+        <div class="flex flex-col lg:flex-row items-start gap-12">
+            <!-- Image -->
+            <div class="w-full lg:w-1/3">
+                <img src="assets/img/about.jpg" alt="About Us"
+                    class="w-full rounded-lg shadow-2xl transform hover:scale-105 transition duration-500">
             </div>
-            <div class="info">
-                <div class="button-container">
-                    <button onclick="showContent('mission')" class="active">Mission</button>
-                    <button onclick="showContent('commitment')">Commitment</button>
-                    <button onclick="showContent('products')">Products</button>
-                    <button onclick="showContent('service')">Customer Service</button>
+
+            <!-- Tabs and Content -->
+            <div class="w-full lg:w-2/3 bg-white p-6 rounded-lg shadow-xl">
+                <!-- Tab Buttons -->
+                <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4">
+                    <button onclick="showContent('mission')" data-target="mission"
+                        class="tab-btn px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-blue-600 text-white shadow-md transform scale-105 active">Mission</button>
+                    <button onclick="showContent('commitment')" data-target="commitment"
+                        class="tab-btn px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200">Commitment</button>
+                    <button onclick="showContent('products')" data-target="products"
+                        class="tab-btn px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200">Products</button>
+                    <button onclick="showContent('service')" data-target="service"
+                        class="tab-btn px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-gray-100 text-gray-600 hover:bg-gray-200">Service</button>
                 </div>
 
-                <div class="content-text active" id="mission">
-                    <h2>Our Mission</h2>
-                    <p>At Genuine Auto Parts, our mission is to provide car owners and enthusiasts with reliable,
-                        authentic used auto parts at affordable prices. We strive to be the go-to destination for
-                        individuals seeking parts that are genuine, reliable, and cost-effective.</p>
+                <!-- Tab Contents -->
+                <div class="content-text active animate-fade-in-up" id="mission">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">At Genuine Auto Parts, our mission is to provide
+                        car owners and enthusiasts with reliable, authentic used auto parts at affordable prices. We
+                        strive to be the go-to destination for individuals seeking parts that are genuine, reliable, and
+                        cost-effective.</p>
                 </div>
 
-                <div class="content-text" id="commitment">
-                    <h2>Our Commitment to Quality</h2>
-                    <p>We understand the importance of quality when it comes to auto parts. That's why we meticulously
-                        inspect each part to ensure that it meets our stringent standards for performance and
-                        reliability. Our commitment to quality means that you can shop with confidence, knowing that
-                        you're getting genuine parts that will keep your vehicle running smoothly.</p>
+                <div class="content-text hidden animate-fade-in-up" id="commitment">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Commitment to Quality</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">We understand the importance of quality when it
+                        comes to auto parts. That's why we meticulously inspect each part to ensure that it meets our
+                        stringent standards for performance and reliability. Our commitment to quality means that you
+                        can shop with confidence, knowing that you're getting genuine parts that will keep your vehicle
+                        running smoothly.</p>
                 </div>
 
-                <div class="content-text" id="products">
-                    <h2>Our Products</h2>
-                    <p>Genuine Auto Parts offers a wide selection of used car parts for various makes and models. From
-                        engines and transmissions to headlights and bumpers, we have everything you need to keep your
-                        vehicle in top condition. Whether you're a DIY enthusiast or a professional mechanic, you'll
-                        find the parts you need to get the job done right.</p>
+                <div class="content-text hidden animate-fade-in-up" id="products">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Products</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">Genuine Auto Parts offers a wide selection of used
+                        car parts for various makes and models. From engines and transmissions to headlights and
+                        bumpers, we have everything you need to keep your vehicle in top condition. Whether you're a DIY
+                        enthusiast or a professional mechanic, you'll find the parts you need to get the job done right.
+                    </p>
                 </div>
 
-                <div class="content-text" id="service">
-                    <h2>Our Customer Service</h2>
-                    <p>At Genuine Auto Parts, we believe in providing exceptional customer service. Our friendly and
-                        knowledgeable team is here to assist you every step of the way, from helping you find the right
-                        part to answering any questions you may have. We are committed to ensuring that your experience
-                        with us is smooth, hassle-free, and enjoyable.</p>
+                <div class="content-text hidden animate-fade-in-up" id="service">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Our Customer Service</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">At Genuine Auto Parts, we believe in providing
+                        exceptional customer service. Our friendly and knowledgeable team is here to assist you every
+                        step of the way, from helping you find the right part to answering any questions you may have.
+                        We are committed to ensuring that your experience with us is smooth, hassle-free, and enjoyable.
+                    </p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="foot-top">
-            <div class="address">
-                <h1 class="cont">Contact</h1>
-                <p>Johannesburg Postal code 1575</p>
-            </div>
-            <div class="image">
-                <img src="img/auto.png" alt="">
-            </div>
-            <div class="workinghours">
-                <h1 class="whours">Working Hours.</h1>
-                <ul>
-                    <strong>
-                        <li>Mon - Fri: 07:00am - 6:00pm</li>
-                        <li>Weekends: 07:00am - 3:00pm</li>
-                        <li>Holidays: 07:00am - 1:00pm</li>
-                    </strong>
-                </ul>
             </div>
         </div>
-        <div class="foot-bottom">
-    
-        </div>
-        <div class="copyright">
-            <p>&copy; Copyright 2024 design KFM</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-premium-black text-gray-400 py-16 font-light border-t-4 border-gold-accent mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <!-- Brand -->
+                <div class="flex flex-col items-center md:items-start space-y-4">
+                    <div
+                        class="bg-white p-2 rounded-full w-20 h-20 flex items-center justify-center mb-2 shadow-lg shadow-gold-accent/20">
+                        <img src="assets/img/auto.png" alt="Logo" class="w-16">
+                    </div>
+                    <h3 class="text-2xl font-bold text-white uppercase tracking-wider">Genuine<span
+                            class="text-gold-accent">Auto</span> Parts</h3>
+                    <p class="text-sm leading-relaxed max-w-xs mx-auto md:mx-0">
+                        Your trusted source for quality used auto parts. Reliable, affordable, and guaranteed
+                        performance.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#"
+                            class="text-gray-400 hover:text-gold-accent transition transform hover:scale-110"><box-icon
+                                name='facebook' type='logo' color="currentColor"></box-icon></a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-gold-accent transition transform hover:scale-110"><box-icon
+                                name='twitter' type='logo' color="currentColor"></box-icon></a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-gold-accent transition transform hover:scale-110"><box-icon
+                                name='instagram' type='logo' color="currentColor"></box-icon></a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-gold-accent transition transform hover:scale-110"><box-icon
+                                name='whatsapp' type='logo' color="currentColor"></box-icon></a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4
+                        class="text-lg font-bold text-white uppercase tracking-wider mb-6 border-b border-gray-800 pb-2 inline-block">
+                        Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start justify-center md:justify-start gap-3 group">
+                            <box-icon name='map' type='solid' color="#d4af37"
+                                class="mt-1 group-hover:scale-110 transition shrink-0"></box-icon>
+                            <span class="group-hover:text-white transition">Johannesburg<br>Postal code 1575</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3 group">
+                            <box-icon name='envelope' type='solid' color="#d4af37"
+                                class="group-hover:scale-110 transition shrink-0"></box-icon>
+                            <a href="mailto:Thapelomolobela@gmail.com"
+                                class="group-hover:text-gold-accent transition break-all">Thapelomolobela@gmail.com</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-3 group">
+                            <box-icon name='phone' type='solid' color="#d4af37"
+                                class="group-hover:scale-110 transition shrink-0"></box-icon>
+                            <a href="tel:0792003052" class="group-hover:text-gold-accent transition">0792003052</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4
+                        class="text-lg font-bold text-white uppercase tracking-wider mb-6 border-b border-gray-800 pb-2 inline-block">
+                        Working Hours</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between border-b border-gray-800 pb-2 hover:pl-2 transition-all">
+                            <span>Mon - Fri:</span> <span class="text-gold-accent font-semibold">07:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2 hover:pl-2 transition-all">
+                            <span>Weekends:</span> <span class="text-gold-accent font-semibold">07:00 - 15:00</span>
+                        </li>
+                        <li class="flex justify-between pb-2 hover:pl-2 transition-all"><span>Holidays:</span> <span
+                                class="text-gold-accent font-semibold">07:00 - 13:00</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-xs tracking-wide text-gray-500">
+                <p>&copy; 2024 Genuine Auto Parts. All rights reserved. <span class="mx-2 text-gray-700">|</span>
+                    Designed by KFM.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Tab Switching Logic
         function showContent(id) {
-            var contents = document.querySelectorAll('.content-text');
-            var buttons = document.querySelectorAll('.button-container button');
+            // Hide all contents
+            const contents = document.querySelectorAll('.content-text');
             contents.forEach(content => {
+                content.classList.add('hidden');
                 content.classList.remove('active');
             });
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(button => {
-                button.classList.remove('active');
+                button.classList.remove('bg-blue-600', 'text-white', 'shadow-md', 'transform', 'scale-105', 'active');
+                button.classList.add('bg-gray-100', 'text-gray-600');
             });
-            document.getElementById(id).classList.add('active');
-            document.querySelector(`.button-container button[data-target="${id}"]`).classList.add('active');
+
+            // Show selected content
+            const selectedContent = document.getElementById(id);
+            if (selectedContent) {
+                selectedContent.classList.remove('hidden');
+                selectedContent.classList.add('active');
+            }
+
+            // Activate selected button
+            const selectedButton = document.querySelector(`button[data-target="${id}"]`);
+            if (selectedButton) {
+                selectedButton.classList.remove('bg-gray-100', 'text-gray-600');
+                selectedButton.classList.add('bg-blue-600', 'text-white', 'shadow-md', 'transform', 'scale-105', 'active');
+            }
         }
     </script>
 </body>
